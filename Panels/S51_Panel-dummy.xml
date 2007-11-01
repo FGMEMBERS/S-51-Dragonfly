@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--
+    Dedicated only to FlightGear
+    Gerard Robin
+    License:  GPL
+-->
+
+
+
+<PropertyList>
+
+    <path>Models/s51-panel-dummy.ac</path>
+    <texture-path>Models/Textures</texture-path>
+
+
+
+
+
+
+</PropertyList>

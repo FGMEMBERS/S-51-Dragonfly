@@ -1,0 +1,108 @@
+<PropertyList>
+
+
+    <!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+    -->
+    <!--                   Auteur :      Gerard ROBIN            GPL  COPYRIGHT-->
+	<path>Models/S51-rotor-tete.ac</path>
+
+	<texture-path>Textures</texture-path>
+
+        <animation>
+                <condition>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>999</value>
+                    </equals>
+            </condition>
+		<type>select</type>
+                <object-name>Gabarit-Pose</object-name>
+ 	</animation>
+
+
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Tete</object-name>
+                <property>rotors/main/blade[0]/position-deg</property>
+		<factor>1</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+        <animation>
+                <condition>
+			<equals>
+				<property>controls/flight/wing-fold</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<type>rotate</type>
+                <object-name>Rotor-Tete</object-name>
+		<property>controls/rotor/blade0-fold-pos</property>
+		<factor>1</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Tete</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>180</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>180</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>180</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>180</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+
+
+
+
+</PropertyList>
