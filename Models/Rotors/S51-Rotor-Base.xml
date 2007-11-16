@@ -10,6 +10,9 @@
 	<path>Models/S51-rotor-pale-base.ac</path>
 
 	<texture-path>Models/Textures</texture-path>
+        <offsets>
+            <heading-deg>180</heading-deg>
+        </offsets>
 
        <animation>
                 <condition>
@@ -88,7 +91,7 @@
 
         <!--SELECT========================-->
 
-        <animation>
+        <!--<animation>
 		<condition>
                     <and>
 			<less-than>
@@ -139,7 +142,7 @@
 		</condition>
 		<type>select</type>
                 <object-name>Rotor-Disc_M-Pale</object-name>
- 	</animation>
+ 	</animation>-->
 
 
 

@@ -222,7 +222,7 @@
 		</axis>
 	</animation>
 
-        <animation>
+        <!--<animation>
 		<type>rotate</type>
                 <object-name>Rotor-Pale</object-name>
 		<property>surface-positions/blade-fold-pos-norm</property>
@@ -258,7 +258,7 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
+	</animation>-->
 
         <animation>
                 <condition>
@@ -283,7 +283,7 @@
 		</axis>
 	</animation>
 
-        <animation>
+        <!--<animation>
 		<type>rotate</type>
                 <object-name>Rotor-PaleD</object-name>
 		<property>surface-positions/blade-fold-pos-norm</property>
@@ -319,7 +319,7 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
+	</animation>-->
 
         <animation>
                 <condition>
@@ -345,7 +345,7 @@
 		</axis>
 	</animation>
 
-        <animation>
+        <!--<animation>
 		<type>rotate</type>
                 <object-name>Rotor-Pale-Base</object-name>
                 <object-name>Rotor-Pale-Fix</object-name>
@@ -382,7 +382,7 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
+	</animation>-->
 
         <animation>
                 <condition>
@@ -407,7 +407,7 @@
 		</axis>
 	</animation>
 
-        <animation>
+        <!--<animation>
 		<type>rotate</type>
                 <object-name>Rotor-Pale-Rot</object-name>
 		<property>surface-positions/blade-fold-pos-norm</property>
@@ -443,10 +443,10 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
+	</animation>-->
 
-        <!--==========================================-->
-
+        <!--=========with ofset zero=================================-->
+<!--
         <animation>
 		<type>rotate</type>
                 <object-name>Rotor-Pale</object-name>
@@ -790,15 +790,409 @@
 		</axis>
 	</animation>
 
+-->
+
+
+<!--===========with offset Zero===============================-->
 
 
 
+<animation>
+		<type>rotate</type>
+                <object-name>Rotor-Pale</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>90</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-PaleD</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>90</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Pale-Base</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>90</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>-0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Pale-Fix</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>90</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>90</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-PaleD</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>15</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>15</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Pale-Base</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>15</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>15</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Pale-Fix</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>15</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>15</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.18359</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-PaleD</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>118</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>120</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>-0.580091</x-m>
+			<y-m>0</y-m>
+			<z-m>0.14131</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+        <animation>
+		<type>rotate</type>
+                <object-name>Rotor-Pale-Base</object-name>
+		<property>surface-positions/blade-fold-pos-norm</property>
+                <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.30</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.50</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.80</ind>
+                    <dep>118</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>120</dep>
+                    </entry>
+            </interpolation>
+		<center>
+			<x-m>-0.580091</x-m>
+			<y-m>0</y-m>
+			<z-m>0.14131</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!--SELECT========================-->
+        <animation>
+		<condition>
+                    <and>
+			<less-than>
+				<property>rotors/main/rpm</property>
+				<value>150</value>
+			</less-than>
+                        <less-than>
+                                <property>surface-positions/blade-fold-pos-norm</property>
+                                <value>0.50</value>
+                        </less-than>
+                    </and>
+		</condition>
+		<type>select</type>
+                <object-name>Rotor-Pale</object-name>
+ 	</animation>
+
+        <animation>
+		<condition>
+                    <or>
+                            <and>
+                                <less-than>
+                                    <property>rotors/main/rpm</property>
+                                    <value>210</value>
+                                 </less-than>
+                                 <greater-than>
+                                        <property>rotors/main/rpm</property>
+                                        <value>149</value>
+                                 </greater-than>
+                             </and>
+                             <not>
+                                 <less-than>
+                                    <property>surface-positions/blade-fold-pos-norm</property>
+                                    <value>0.50</value>
+                                 </less-than>
+                            </not>
+                     </or>
+		</condition>
+		<type>select</type>
+                <object-name>Rotor-PaleD</object-name>
+ 	</animation>
+
+        <animation>
+		<condition>
+			<greater-than>
+				<property>rotors/main/rpm</property>
+				<value>200</value>
+			</greater-than>
+		</condition>
+		<type>select</type>
+                <object-name>Rotor-Disc_M-Pale</object-name>
+ 	</animation>
 
 
 

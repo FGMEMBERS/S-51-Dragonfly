@@ -10,6 +10,9 @@
 	<path>Models/S51-rotor-tete.ac</path>
 
 	<texture-path>Textures</texture-path>
+        <offsets>
+            <heading-deg>180</heading-deg>
+        </offsets>
 
         <animation>
                 <condition>
@@ -63,7 +66,7 @@
 		</axis>
 	</animation>
 
-        <animation>
+        <!--<animation>
 		<type>rotate</type>
                 <object-name>Rotor-Tete</object-name>
 		<property>surface-positions/blade-fold-pos-norm</property>
@@ -99,7 +102,7 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation>
+	</animation>-->
 
 
 
