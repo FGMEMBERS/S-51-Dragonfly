@@ -139,6 +139,10 @@
             <object-name>Moteur-GGrille</object-name>
             <object-name>Moteur-DGrille</object-name>
             <object-name>Moteur-AVGrille</object-name>
+            <object-name>Rotor-Tete</object-name>
+            <object-name>Rotor-Pale0</object-name>
+            <object-name>Rotor-Pale1</object-name>
+            <object-name>Rotor-Pale2</object-name>
             <object-name>Rotor-Pales-Queue</object-name>
             <object-name>Rotor-Queue-Tete</object-name>
             <object-name>Vitrage</object-name>
