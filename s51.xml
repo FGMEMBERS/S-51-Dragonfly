@@ -43,6 +43,7 @@ Capacités d'emport : quatre passagers ou deux civieres et un blesse assis avec 
     mincyclicail="-5" maxcyclicail="5"
     diameter="13.71" numblades="3" weightperblade="90" relbladecenter="0.5"
     dynamic="1" rpm="241" rellenflaphinge="0.125" delta3="0.5"
+    phi0 = "0"
     delta=".25"
     pitch-a="10"
     pitch-b="15"
@@ -138,7 +139,7 @@ Capacités d'emport : quatre passagers ou deux civieres et un blesse assis avec 
           width="0.47" taper="0.9" midpoint="0.05" idrag="0"/>
 
 <hstab x="-0.80" y="0" z=".30" taper=".5" length="3.30" chord="0.80" sweep="40" incidence="0">
-		<stall aoa="16" width="4" peak="1.5"/> >
+		<stall aoa="16" width="4" peak="1.5"/>
 </hstab>
 
 <!-- left -->

@@ -12,7 +12,7 @@
 
 <PropertyList>
  <sim>
-	<description>S-51_Helicopter_DragonFly</description>
+	<description>Sikorsky-S51_Helicopter</description>
         <author>Gerard Robin and Maik Justus (FDM)</author>
         <status>alpha, "GPL Copyright"</status>
         <version> 0.2</version>
@@ -68,7 +68,6 @@
 	<flight>
                 <aileron-trim>-0.00000</aileron-trim>
                 <rudder-trim>-0.0000</rudder-trim>
-                <wing-fold>1</wing-fold>
 	</flight>
 	<engines>
                 <engine n="0">
@@ -87,6 +86,7 @@
         <rotor>
             <brake>1</brake>
             <fold-pos>0</fold-pos>
+            <folded>0</folded>
         </rotor>
         <electric>
             <master-switch>false</master-switch>
