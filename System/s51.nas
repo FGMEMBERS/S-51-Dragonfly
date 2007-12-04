@@ -11,7 +11,7 @@ var rotor = props.globals.getNode("controls/engines/engine/rotorgear");
 var collective0= props.globals.getNode("controls/engines/engine/throttle");
 var collective1= props.globals.getNode("controls/engines/engine[1]/throttle");
 var state = props.globals.getNode("sim/model/s51/state");
-var turbine = props.globals.getNode("sim/model/s51/turbine-rpm-pct", 1);
+var engine = props.globals.getNode("sim/model/s51/engine-rpm-pct", 1);
 var brake = props.globals.getNode("controls/rotor/brake");
 var folded = props.globals.getNode("controls/rotor/folded");
 var master_bat = props.globals.getNode("controls/engines/engine/master-bat");
@@ -40,7 +40,7 @@ var engines = func {
                         collective0.setValue(1);
                         collective1.setValue(1);
 			settimer(func { rotor.setValue(1) }, 3);
-			interpolate(turbine, 100, 10.5);
+			interpolate(engine, 100, 10.5);
 			settimer(func { state.setValue(2) ; print("engines running") }, 10.5);
 	}
 	} else {
@@ -48,7 +48,7 @@ var engines = func {
 			print("engines stopped");
 			rotor.setValue(0);
 			state.setValue(3);
-			interpolate(turbine, 0, 18);
+			interpolate(engine, 0, 18);
 			settimer(func { state.setValue(0) ; print("engines off") }, 18);
                         }
                         magnetos.setValue(0);
