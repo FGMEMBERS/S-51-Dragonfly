@@ -22,7 +22,6 @@
                     </equals>
             </condition>
 		<type>select</type>
-		<nopreview/>
                 <object-name>Gabarit-Pose</object-name>
  	</animation>
 
@@ -54,7 +53,7 @@
 		<type>rotate</type>
                 <object-name>Rotor-Tete</object-name>
 		<property>controls/rotor/blade0-fold-pos</property>
-		<factor>1</factor>
+		<factor>-1</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
@@ -66,6 +65,7 @@
 			<z>1</z>
 		</axis>
 	</animation>
+
 
         <!--<animation>
 		<type>rotate</type>

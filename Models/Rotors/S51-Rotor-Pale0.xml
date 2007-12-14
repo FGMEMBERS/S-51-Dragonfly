@@ -19,9 +19,18 @@
             </offsets>
         </model>
 
+
+
+
         <!--ROTATE===============-->
 
         <animation>
+               <condition>
+			<equals>
+				<property>controls/flight/wing-fold</property>
+				<value>0</value>
+			</equals>
+		</condition>
 		<type>rotate</type>
                 <object-name>Rotor-Pale</object-name>
                 <property>rotors/main/blade[0]/position-deg</property>
@@ -39,6 +48,12 @@
 	</animation>
 
         <animation>
+               <condition>
+			<equals>
+				<property>controls/flight/wing-fold</property>
+				<value>0</value>
+			</equals>
+		</condition>
 		<type>rotate</type>
                 <object-name>Rotor-PaleD</object-name>
                 <property>rotors/main/blade[0]/position-deg</property>
@@ -56,6 +71,12 @@
 	</animation>
 
         <animation>
+                <condition>
+			<equals>
+				<property>controls/flight/wing-fold</property>
+				<value>0</value>
+			</equals>
+		</condition>
 		<type>rotate</type>
                 <object-name>Rotor-Pale-Base</object-name>
                 <object-name>Rotor-Pale-Fix</object-name>
@@ -74,6 +95,12 @@
 	</animation>
 
         <animation>
+                <condition>
+			<equals>
+				<property>controls/flight/wing-fold</property>
+				<value>0</value>
+			</equals>
+		</condition>
 		<type>rotate</type>
                 <object-name>Rotor-Pale-Rot</object-name>
                 <property>rotors/main/blade[0]/position-deg</property>
@@ -91,6 +118,12 @@
 	</animation>
 
         <animation>
+                <condition>
+			<equals>
+				<property>controls/flight/wing-fold</property>
+				<value>0</value>
+			</equals>
+		</condition>
 		<type>rotate</type>
                 <object-name>Rotor-Disc_M-Pale</object-name>
                 <property>rotors/main/blade[0]/position-deg</property>
@@ -208,8 +241,8 @@
 		</condition>
 		<type>rotate</type>
                 <object-name>Rotor-Pale</object-name>
-		<property>controls/rotor/blade0-fold-pos</property>
-		<factor>1</factor>
+		<property>rotors/main/blade[0]/position-deg</property>
+		<factor>-1</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
@@ -221,6 +254,10 @@
 			<z>1</z>
 		</axis>
 	</animation>
+
+
+
+
 
         <!--<animation>
 		<type>rotate</type>
@@ -270,7 +307,7 @@
 		<type>rotate</type>
                 <object-name>Rotor-PaleD</object-name>
 		<property>controls/rotor/blade0-fold-pos</property>
-		<factor>1</factor>
+		<factor>-1</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
@@ -332,7 +369,7 @@
                 <object-name>Rotor-Pale-Base</object-name>
                 <object-name>Rotor-Pale-Fix</object-name>
 		<property>controls/rotor/blade0-fold-pos</property>
-		<factor>1</factor>
+		<factor>-1</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
@@ -394,7 +431,7 @@
 		<type>rotate</type>
                 <object-name>Rotor-Pale-Rot</object-name>
 		<property>controls/rotor/blade0-fold-pos</property>
-                <factor>1</factor>
+                <factor>-1</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
@@ -444,6 +481,7 @@
 			<z>1</z>
 		</axis>
 	</animation>-->
+
 
 
 
