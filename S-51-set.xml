@@ -35,12 +35,14 @@
   </hud>
 
   <model>
-    <path archive="y">Aircraft/S-51-Dragonfly/Models/S51-sikorsky.xml</path>
-                    <s51>
-                            <nav-lights type="bool">true</nav-lights>
-                            <state type="int">0</state>
-                            <rotor-step-deg type="float">0.0</rotor-step-deg>
-                    </s51>
+    	<path archive="y">Aircraft/S-51-Dragonfly/Models/S51-sikorsky.xml</path>
+	<s51>
+		<nav-lights type="bool">true</nav-lights>
+		<state type="int">0</state>
+		<rotor-step-deg type="float">0.0</rotor-step-deg>
+	</s51>
+	<rescue-lift>1</rescue-lift>
+	<rescue type="bool">false</rescue>
   </model>
 
   <view>

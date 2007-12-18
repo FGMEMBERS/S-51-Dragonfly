@@ -1,0 +1,32 @@
+<PropertyList>
+
+
+    <!--
+    Usable with FlightGear
+    Copyright License:  GPL
+    Gerard Robin
+    -->
+
+	<path>rescue-man.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>Rescue-Man</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>/sim/model/rescue</property>
+					<value>1</value>
+				</equals>
+				<not-equals>
+					<property>/sim/model/rescue-lift</property>
+					<value>0</value>
+				</not-equals>
+			</and>
+		</condition>
+        </animation>
+
+
+
+
+</PropertyList>
