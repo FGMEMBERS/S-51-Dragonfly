@@ -17,8 +17,35 @@
             <x-m>0</x-m>
         </offsets>
 
+<!--======================RESCUE=================================-->
 
 
+
+	<model>
+            <name>Rescue-Op</name>
+            <path>Aircraft/S-51-Dragonfly/Models/Rescue/Rescue-Op.xml</path>
+            <offsets>
+                    <x-m>-1.90518</x-m>
+                    <y-m>-1.03724</y-m>
+                    <z-m>-4.42096</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+
+	<model>
+            <name>Rescue-Man</name>
+            <path>Aircraft//S-51-Dragonfly/Models/Rescue/Rescue-Man.xml</path>
+            <offsets>
+                    <x-m>-1.99792</x-m>
+                    <y-m>-0.651618</y-m>
+                    <z-m>0.309202</z-m>
+                    <pitch-deg>0</pitch-deg>
+		    <heading-deg>180</heading-deg>
+            </offsets>
+        </model>
+
+<!--=============================MODEL=============================-->
 
         <model>
             <name>Fuselage</name>
@@ -337,7 +364,7 @@
 			<y-m>0</y-m>
 			<z-m>1.76741</z-m>
 		</center>
-		<axis>Rotor-Princ-Pale3
+		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
