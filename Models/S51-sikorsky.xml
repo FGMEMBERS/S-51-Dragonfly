@@ -45,6 +45,18 @@
             </offsets>
         </model>
 
+	<animation>
+            <type>select</type>
+            <object-name>Rescue-Op</object-name>
+	    <object-name>Rescue-Man</object-name>
+            <condition>
+                    <equals>
+                        <property>surface-positions/left-door-position</property>
+                        <value>1</value>
+                    </equals>
+            </condition>
+        </animation>
+
 <!--=============================MODEL=============================-->
 
         <model>
