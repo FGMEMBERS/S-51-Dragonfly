@@ -17,6 +17,36 @@
             <x-m>0</x-m>
         </offsets>
 
+<!--========================MP===================================-->
+        <nasal>
+            <load>
+                print("S51 Initializing...");
+                var destinations = {
+                            "float": [ 
+                                       "sim/model/rescue-lift",
+                                       "surface-positions/left-door-position",
+                                       "surface-positions/right-door-position",
+                                       "surface-positions/blade-fold-pos-norm",
+                                       "controls/rotor/blade0-fold-pos",
+                                       "controls/rotor/blade1-fold-pos",
+                                       "controls/rotor/blade2-fold-pos"
+                                     ],
+                            "int": [ "controls/flight/wing-fold" ] };
+                var listeners = [];
+                var mpnode = cmdarg();
+                foreach(var type; keys(destinations)) {
+                    var sources = mpnode.getNode("sim/multiplay/generic").getChildren(type);
+                    forindex(var index; destinations[type]) {
+                        destinations[type][index] = mpnode.getNode(destinations[type][index]);
+                        append(listeners, setlistener(sources[index], func(source) { destinations[source.getName()][source.getIndex()].setValue(source.getValue()) }, 1, 0));
+                    }
+                }
+            </load>
+            <unload>
+                print("S51 Unloading...");
+                foreach(var listener; listeners) removelistener(listener);
+            </unload>
+        </nasal>
 <!--======================RESCUE=================================-->
 
 

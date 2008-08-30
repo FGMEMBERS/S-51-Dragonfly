@@ -23,10 +23,14 @@
 		<object-name>Rescued-Person</object-name>
 		<object-name>Crown</object-name>
 		<condition>
-			<equals>
+                    <greater-than-equals>
+                            <property>sim/model/rescue-lift</property>
+                            <value>0</value>
+                    </greater-than-equals>
+			<!--<equals>
 				<property>/sim/model/rescue</property>
 				<value>1</value>
-			</equals>
+			</equals>-->
 		</condition>
         </animation>
 
@@ -93,10 +97,14 @@
             <object-name>Rescued-Person</object-name>
 	    <object-name>Crown</object-name>
             <condition>
-                    <not-equals>
-                        <property>/sim/model/rescue-lift</property>
+                    <greater-than>
+                        <property>sim/model/rescue-lift</property>
+                         <value>0</value>
+                    </greater-than>
+                    <!--<greater-than>
+                        <property>sim/model/rescue-lift</property>
                         <value>0</value>
-                    </not-equals>
+                    </greater-than>-->
             </condition>
         </animation>
 

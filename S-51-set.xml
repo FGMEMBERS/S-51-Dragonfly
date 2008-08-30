@@ -41,8 +41,7 @@
 		<state type="int">0</state>
 		<rotor-step-deg type="float">0.0</rotor-step-deg>
 	</s51>
-	<rescue-lift>1</rescue-lift>
-	<rescue type="bool">false</rescue>
+	<rescue-lift>-1</rescue-lift>
   </model>
 
   <view>
@@ -62,7 +61,18 @@
     </weight>
 
     <help include="Help/S51-help.xml"/>
-
+    <multiplay>
+        <generic>
+            <float n="0" alias="/sim/model/rescue-lift" />
+            <float n="1" alias="/surface-positions/left-door-position" />
+            <float n="2" alias="/surface-positions/right-door-position" />
+            <float n="3" alias="/surface-positions/blade-fold-pos-norm" />
+            <float n="4" alias="/controls/rotor/blade0-fold-pos" />
+            <float n="5" alias="/controls/rotor/blade1-fold-pos" />
+            <float n="6" alias="/controls/rotor/blade2-fold-pos" />
+            <int n="0" alias="/controls/flight/wing-fold" />
+        </generic>
+    </multiplay>
  </sim>
 
 

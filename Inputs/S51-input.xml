@@ -81,8 +81,13 @@
                                 <name>r</name>
                                 <desc>Toggle Rescue</desc>
                                 <binding>
-                                        <command>property-toggle</command>
-                                        <property>/sim/model/rescue</property>
+                                        <command>nasal</command>
+                                        <script>
+                                            var node = props.globals.getNode("/sim/model/rescue-lift");
+                                            var value = node.getValue();
+                                            var delta = if (value >= 0) { -2 } else { 2 };
+                                            node.setValue(value + delta);
+                                        </script>
                                 </binding>
                         </key>
                         <key n="109">
