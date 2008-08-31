@@ -17,12 +17,13 @@
             <x-m>0</x-m>
         </offsets>
 
-<!--========================MP===================================-->
+<!--========================MP==========by Csaba Halász=========================-->
+
         <nasal>
             <load>
                 print("S51 Initializing...");
                 var destinations = {
-                            "float": [ 
+                            "float": [
                                        "sim/model/rescue-lift",
                                        "surface-positions/left-door-position",
                                        "surface-positions/right-door-position",

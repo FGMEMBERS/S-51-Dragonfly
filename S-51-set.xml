@@ -61,7 +61,7 @@
     </weight>
 
     <help include="Help/S51-help.xml"/>
-    <multiplay>
+    <multiplay> <!--by Csaba Halász-->
         <generic>
             <float n="0" alias="/sim/model/rescue-lift" />
             <float n="1" alias="/surface-positions/left-door-position" />
