@@ -30,7 +30,8 @@
                                        "surface-positions/blade-fold-pos-norm",
                                        "controls/rotor/blade0-fold-pos",
                                        "controls/rotor/blade1-fold-pos",
-                                       "controls/rotor/blade2-fold-pos"
+                                       "controls/rotor/blade2-fold-pos",
+                                       "sim/model/rescue"
                                      ],
                             "int": [ "controls/flight/wing-fold" ] };
                 var listeners = [];
@@ -150,7 +151,23 @@
             <path>Aircraft/S-51-Dragonfly/Models/S51-Pilot-Out.xml</path>
             <offsets>
                     <x-m>0</x-m>
-                    <y-m>0</y-m>
+                    <y-m>0</y-m><animation>
+                        <type>select</type>
+                        <object-name>Rescued-Person</object-name>
+                        <object-name>Crown</object-name>
+                        <condition>
+                            <and>
+                                <greater-than>
+                                    <property>sim/model/rescue-lift</property>
+                                    <value>0</value>
+                                </greater-than>
+                                <greater-than>
+                                    <property>sim/model/rescue</property>
+                                    <value>0</value>
+                                </greater-than>
+                            </and>
+                        </condition>
+        </animation>
                     <z-m>0</z-m>
                     <pitch-deg>0</pitch-deg>
             </offsets>

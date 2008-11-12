@@ -41,7 +41,6 @@
 		<state type="int">0</state>
 		<rotor-step-deg type="float">0.0</rotor-step-deg>
 	</s51>
-	<rescue-lift>-1</rescue-lift>
   </model>
 
   <view>
@@ -70,6 +69,7 @@
             <float n="4" alias="/controls/rotor/blade0-fold-pos" />
             <float n="5" alias="/controls/rotor/blade1-fold-pos" />
             <float n="6" alias="/controls/rotor/blade2-fold-pos" />
+            <float n="7" alias="/sim/model/rescue-lift" />
             <int n="0" alias="/controls/flight/wing-fold" />
         </generic>
     </multiplay>
@@ -125,8 +125,12 @@
                 <electrical>
                         <file>Aircraft/S-51-Dragonfly/System/electrical.nas</file>
                 </electrical>
+                <terrain>
+                    <file>Aircraft/S-51-Dragonfly/System/terrain.nas</file>
+                </terrain>
 		<s51>
 			<file>Aircraft/S-51-Dragonfly/System/s51.nas</file>
+                        <file>Aircraft/S-51-Dragonfly/System/rescue_operation.nas</file>
 		</s51>
 	</nasal>
 

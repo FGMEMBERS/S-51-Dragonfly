@@ -13,20 +13,10 @@
 		<type>select</type>
 		<object-name>Rescue-Man</object-name>
 		<condition>
-                    <greater-than>
-                            <property>sim/model/rescue-lift</property>
-                            <value>0</value>
-                    </greater-than>
-			<!--<and>
-				<equals>
-					<property>/sim/model/rescue</property>
-					<value>1</value>
-				</equals>
-				<not-equals>
-					<property>/sim/model/rescue-lift</property>
-					<value>0</value>
-				</not-equals>
-			</and>-->
+                    <equals>
+                            <property>/sim/model/rescue</property>
+                            <value>1</value>
+                    </equals>
 		</condition>
         </animation>
 
