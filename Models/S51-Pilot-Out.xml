@@ -1,0 +1,28 @@
+<PropertyList>
+
+
+    <!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+    -->
+
+    <path>S51-pilot-out.ac</path>
+
+    <texture-path>Textures</texture-path>
+
+
+    <offsets>
+            <pitch-deg>0</pitch-deg>
+            <z-m>0</z-m>
+            <x-m>0</x-m>
+    </offsets>
+
+
+
+
+
+
+
+
+</PropertyList>

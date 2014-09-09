@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+
+<!--
+    Dedicated only to FlightGear
+    Gerard Robin
+    License:  GPL
+-->
+
+
+
+<PropertyList>
+
+    <path>Models/s51-panel-sup.ac</path>
+    <texture-path>Models/Textures</texture-path>
+
+<!--==LIGNE 1=========================-->
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.155615</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+     <model>
+            <name>ASI</name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/ASI-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.155615</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.050766</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/HI-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.050766</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+
+    <model>
+            <name>Attitude</name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.050766</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Attitude-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.050766</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.155615</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name>Altitude</name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/ALT-Nord.xml</path>
+            <offsets>
+                    <x-m>-0.0095</x-m>
+                    <y-m>0.155615</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>
+
+<!--==LIGNE 2=========================-->
+
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.256977</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-pt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.256977</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.155615</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-pt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.155615</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.050766</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name>TURN</name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/TURN-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.050766</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.050766</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name>VSI</name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/IVSI-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.050766</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.155615</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-pt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.155615</y-m>
+                    <z-m>-0.017481</z-m>
+            </offsets>
+    </model>
+
+<!--==LIGNE 3=========================-->
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_tpt-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.144928</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-tpt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.144928</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_tpt-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.072382</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-tpt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.072382</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_tpt-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-tpt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_tpt-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.072382</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-tpt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.072382</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_tpt-S51.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.144928</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+    <model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Dummy-tpt.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0.144928</y-m>
+                    <z-m>-0.113948</z-m>
+            </offsets>
+    </model>
+
+
+
+
+
+</PropertyList>

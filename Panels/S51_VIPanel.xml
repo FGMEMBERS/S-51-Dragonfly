@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!--
+    Dedicated only to FlightGear
+    Gerard Robin
+    License:  GPL
+-->
+
+
+
+<PropertyList>
+
+    <path>Models/s51-panel-inf.ac</path>
+    <texture-path>Models/Textures</texture-path>
+
+<!--==LIGNE 1=========================-->
+
+    <!--<model>
+            <name></name>
+            <path>Aircraft/S-51-Dragonfly/Instruments/Bezel_pt-Nord.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>-0.155615</y-m>
+                    <z-m>0.0974086</z-m>
+            </offsets>
+    </model>-->
+
+
+
+
+
+</PropertyList>

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+    <keyboard>
+
+
+			<key n="123">
+				<name>{</name>
+				<desc>Shutdown Engines</desc>
+				<binding>
+					<command>nasal</command>
+					<script>s51.engines(-1)</script>
+				</binding>
+			</key>
+                        <key n="115">
+				<name>s</name>
+				<desc>Start Engines</desc>
+				<binding>
+					<command>nasal</command>
+					<script>s51.engines(1)</script>
+				</binding>
+			</key>
+			<key n="125">
+				<name>}</name>
+				<desc>Electric power On</desc>
+				<binding>
+					<command>nasal</command>
+					<script>s51.electric()</script>
+				</binding>
+			</key>
+			<key n="104">
+				<name>h</name>
+				<desc>toggle Hud</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/hud/visibility</property>
+				</binding>
+			</key>
+                        <key n="100">
+                                <name>d</name>
+                                <desc>Toggle Left Door</desc>
+                                <binding>
+                                        <command>property-toggle</command>
+                                        <property>/controls/doors/left-door</property>
+                                </binding>
+                        </key>
+                        <key n="70">
+                            <name>F</name>
+                            <desc>Blades  folded.</desc>
+                            <binding>
+                                    <command>nasal</command>
+                                    <script>s51.blades_fold()</script>
+                            </binding>
+                        </key>
+                        <key n="102">
+                                <name>f</name>
+                                <desc>Blades extended.</desc>
+                                <binding>
+                                    <command>nasal</command>
+                                    <script>s51.blades_unfold()</script>
+                            </binding>
+                        </key>
+                        <key n="78">
+				<name>N</name>
+				<desc>Toggle rotor brake</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						var p = "/controls/rotor/brake";
+						setprop(p, !getprop(p));
+					</script>
+				</binding>
+			</key>
+
+			<key n="114">
+                                <name>r</name>
+                                <desc>Toggle Rescue</desc>
+                                <binding>
+                                        <command>nasal</command>
+                                        <script>
+                                            var node = props.globals.getNode("/sim/model/rescue-lift");
+                                            var value = node.getValue();
+                                            var delta = if (value >= 0) { -2 } else { 2 };
+                                            node.setValue(value + delta);
+                                        </script>
+                                </binding>
+                        </key>
+                        <key n="109">
+                                <name>m</name>
+                                <desc>Lift Winch</desc>
+                                <repeatable type="bool">true</repeatable>
+                                <binding>
+                                        <command>property-adjust</command>
+                                        <property>/sim/model/rescue-lift</property>
+                                        <step type="double">-0.01</step>
+                                        <min>0.0</min>
+                                        <max>1</max>
+                                </binding>
+                        </key>
+                        <key n="77">
+                                <name>M</name>
+                                <desc>Down Winch</desc>
+                                <repeatable type="bool">true</repeatable>
+                                <binding>
+                                        <command>property-adjust</command>
+                                        <property>/sim/model/rescue-lift</property>
+                                        <step type="double">0.01</step>
+                                        <min>0.0</min>
+                                        <max>1</max>
+                                </binding>
+                        </key>
+		</keyboard>
+</PropertyList>

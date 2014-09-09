@@ -1,0 +1,960 @@
+<PropertyList>
+
+
+    <!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+    -->
+	<path>S51-ssfuse-v3.ac</path>
+
+	<texture-path>Textures</texture-path>
+
+
+        <offsets>
+            <pitch-deg>0.5</pitch-deg>
+            <z-m>0.07</z-m>
+            <x-m>0</x-m>
+        </offsets>
+
+<!--========================MP==========by Csaba Halász=========================-->
+
+        <nasal>
+            <load>
+                print("S51 Initializing...");
+                var destinations = {
+                            "float": [
+                                       "sim/model/rescue-lift",
+                                       "surface-positions/left-door-position",
+                                       "surface-positions/right-door-position",
+                                       "surface-positions/blade-fold-pos-norm",
+                                       "controls/rotor/blade0-fold-pos",
+                                       "controls/rotor/blade1-fold-pos",
+                                       "controls/rotor/blade2-fold-pos",
+                                       "sim/model/rescue"
+                                     ],
+                            "int": [ "controls/flight/wing-fold" ] };
+                var listeners = [];
+                var mpnode = cmdarg();
+                foreach(var type; keys(destinations)) {
+                    var sources = mpnode.getNode("sim/multiplay/generic").getChildren(type);
+                    forindex(var index; destinations[type]) {
+                        destinations[type][index] = mpnode.getNode(destinations[type][index]);
+                        append(listeners, setlistener(sources[index], func(source) { destinations[source.getName()][source.getIndex()].setValue(source.getValue()) }, 1, 0));
+                    }
+                }
+            </load>
+            <unload>
+                print("S51 Unloading...");
+                foreach(var listener; listeners) removelistener(listener);
+            </unload>
+        </nasal>
+<!--======================RESCUE=================================-->
+
+
+
+	<model>
+            <name>Rescue-Op</name>
+            <path>Aircraft/S-51-Dragonfly/Models/Rescue/Rescue-Op.xml</path>
+            <offsets>
+                    <x-m>-1.90518</x-m>
+                    <y-m>-1.03724</y-m>
+                    <z-m>-4.42096</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+
+	<model>
+            <name>Rescue-Man</name>
+            <path>Aircraft//S-51-Dragonfly/Models/Rescue/Rescue-Man.xml</path>
+            <offsets>
+                    <x-m>-1.99792</x-m>
+                    <y-m>-0.651618</y-m>
+                    <z-m>0.309202</z-m>
+                    <pitch-deg>0</pitch-deg>
+		    <heading-deg>180</heading-deg>
+            </offsets>
+        </model>
+
+	<animation>
+            <type>select</type>
+            <object-name>Rescue-Op</object-name>
+	    <object-name>Rescue-Man</object-name>
+            <condition>
+                    <equals>
+                        <property>surface-positions/left-door-position</property>
+                        <value>1</value>
+                    </equals>
+            </condition>
+        </animation>
+
+<!--=============================MODEL=============================-->
+
+        <model>
+            <name>Fuselage</name>
+            <path>Aircraft/S-51-Dragonfly/Models/S51-fuselage.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Panel-Sup</name>
+            <path>Aircraft/S-51-Dragonfly/Panels/S51_VSPanel.xml</path>
+            <offsets>
+                    <x-m>-3.27429</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0.709714</z-m>
+                    <pitch-deg>-6</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Panel-Dummy</name>
+            <path>Aircraft/S-51-Dragonfly/Panels/S51_Panel-dummy.xml</path>
+            <offsets>
+                    <x-m>-3.27429</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0.709714</z-m>
+                    <pitch-deg>-6</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Panel-Inf</name>
+            <path>Aircraft/S-51-Dragonfly/Panels/S51_VIPanel.xml</path>
+            <offsets>
+                    <x-m>-3.16929</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0.305828</z-m>
+                    <pitch-deg>-20</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Pilote-In</name>
+            <path>Aircraft/S-51-Dragonfly/Models/S51-Pilot-In.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Pilote-Out</name>
+            <path>Aircraft/S-51-Dragonfly/Models/S51-Pilot-Out.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m><animation>
+                        <type>select</type>
+                        <object-name>Rescued-Person</object-name>
+                        <object-name>Crown</object-name>
+                        <condition>
+                            <and>
+                                <greater-than>
+                                    <property>sim/model/rescue-lift</property>
+                                    <value>0</value>
+                                </greater-than>
+                                <greater-than>
+                                    <property>sim/model/rescue</property>
+                                    <value>0</value>
+                                </greater-than>
+                            </and>
+                        </condition>
+        </animation>
+                    <z-m>0</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Rotor-Tete</name>
+            <path>Aircraft/S-51-Dragonfly/Models/Rotors/S51-Rotor-Tete.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>2.54392</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Rotor-Pale0</name>
+            <path>Aircraft/S-51-Dragonfly/Models/Rotors/S51-Rotor-Pale0.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>2.54392</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Rotor-Pale1</name>
+            <path>Aircraft/S-51-Dragonfly/Models/Rotors/S51-Rotor-Pale1.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>2.54392</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+        <model>
+            <name>Rotor-Pale2</name>
+            <path>Aircraft/S-51-Dragonfly/Models/Rotors/S51-Rotor-Pale2.xml</path>
+            <offsets>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>2.54392</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+        </model>
+
+
+        <animation>
+            <name>Alpha-Sequence</name>
+            <object-name>Fuselage</object-name>
+            <object-name>Cockpit-GDoublage</object-name>
+            <object-name>Cockpit-DDoublage</object-name>
+            <object-name>Moteur-GGrille</object-name>
+            <object-name>Moteur-DGrille</object-name>
+            <object-name>Moteur-AVGrille</object-name>
+            <object-name>Rotor-Tete</object-name>
+            <object-name>Rotor-Pale0</object-name>
+            <object-name>Rotor-Pale1</object-name>
+            <object-name>Rotor-Pale2</object-name>
+            <object-name>Rotor-Pales-Queue</object-name>
+            <object-name>Rotor-Queue-Tete</object-name>
+            <object-name>Vitrage</object-name>
+            <!--<object-name>GPorte-Vitrage</object-name>
+            <object-name>DPorte-Vitrage</object-name>-->
+            <object-name>Queue-Disc_M</object-name>
+        </animation>
+
+
+        <animation>
+		<type>noshadow</type>
+		<object-name>Panel-Sup</object-name>
+                <object-name>Cockpit-GDoublage</object-name>
+                <object-name>Cockpit-DDoublage</object-name>
+                <object-name>Moteur-GGrille</object-name>
+                <object-name>Moteur-DGrille</object-name>
+                <object-name>Moteur-AVGrille</object-name>
+                <object-name>Vitrage</object-name>
+                <object-name>Queue-Disc_M</object-name>
+ 	</animation>
+
+        <animation>
+            <type>select</type>
+            <object-name>Pilote-In</object-name>
+            <condition>
+                <and>
+                    <not>
+                        <equals>
+                            <property>sim/current-view/view-number</property>
+                            <value>0</value>
+                        </equals>
+                    </not>
+                    <equals>
+                            <property>surface-positions/blade-fold-pos-norm</property>
+                            <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+        </animation>
+
+        <animation>
+            <type>select</type>
+            <object-name>Pilote-Out</object-name>
+            <condition>
+                <and>
+                    <not-equals>
+                            <property>surface-positions/blade-fold-pos-norm</property>
+                            <value>0</value>
+                    </not-equals>
+                    <equals>
+                         <property>surface-positions/right-door-position</property>
+                         <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </animation>
+
+         <animation>
+            <type>select</type>
+            <object-name>Panel-Dummy</object-name>
+            <condition>
+                <not>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+                </not>
+            </condition>
+        </animation>
+
+        <animation>
+            <type>select</type>
+            <object-name>Panel-Sup</object-name>
+            <condition>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+            </condition>
+        </animation>
+
+        <animation>
+            <type>select</type>
+            <object-name>Queue-Disc_M</object-name>
+            <condition>
+                <not>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+                </not>
+            </condition>
+        </animation>
+
+        <animation>
+            <type>select</type>
+            <object-name>Rotor-Pales-Queue</object-name>
+            <condition>
+                <not>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+                </not>
+            </condition>
+        </animation>
+
+
+
+
+
+
+	<animation>
+  		<type>select</type>
+  		<object-name>Rotor-Pales-Queue</object-name>
+  			<condition>
+   				<less-than>
+    			<property>/rotors/tail/rpm</property>
+    			<value>1600</value>
+   				</less-than>
+  			</condition>
+ 	</animation>
+
+
+
+
+
+
+	<animation>
+		<condition>
+			<greater-than>
+				<property>rotors/tail/rpm</property>
+				<value>1100</value>
+			</greater-than>
+		</condition>
+		<type>noshadow</type>
+		<object-name>Rotor-Pales-Queue</object-name>
+		<object-name>Rotor-Queue-Tete</object-name>
+ 	</animation>
+
+
+	<animation>
+		<type>blend</type>
+		<object-name>Rotor-Pales-Queue</object-name>
+		<object-name>Rotor-Queue-Tete</object-name>
+		<property>rotors/tail/rpm</property>
+		<offset>-0.2</offset>
+		<factor>0.0009</factor>
+		<min>0.20</min>
+	</animation>
+
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Rotor-Pales-Queue</object-name>
+                <object-name>Rotor-Queue-Tete</object-name>
+		<property>rotors/tail/blade[1]/position-deg</property>
+		<center>
+			<x-m>8.78782</x-m>
+			<y-m>0</y-m>
+			<z-m>1.76741</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+	<animation>
+		<type>blend</type>
+		<object-name>Queue-Disc_M</object-name>
+		<property>rotors/tail/rpm</property>
+		<offset>1.2</offset>
+		<factor>-0.0005</factor>
+		<!--<max>0.15</max>-->
+	</animation>
+
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Queue-Disc_M</object-name>
+		<property>/sim/time/elapsed-sec</property>
+
+		<factor>100</factor>
+		<center>
+			<x-m>8.78782</x-m>
+			<y-m>0</y-m>
+			<z-m>1.76741</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--       ======   Doors Open/Close =============-->
+
+	<animation>
+        <type>translate</type>
+        <object-name>GPorte-Doublure</object-name>
+       <!-- <object-name>GPorte-Vitrage</object-name>-->
+        <property>surface-positions/left-door-position</property>
+        <factor>0.77</factor>
+        <axis>
+          <x>1</x>
+          <y>-0.05</y>
+          <z>0</z>
+        </axis>
+ 	</animation>
+
+	<animation>
+        <type>translate</type>
+        <object-name>DPorte-Doublure</object-name>
+        <!--<object-name>DPorte-Vitrage</object-name>-->
+        <property>surface-positions/right-door-position</property>
+        <factor>0.77</factor>
+        <axis>
+          <x>1</x>
+          <y>0</y>
+          <z>0</z>
+        </axis>
+ 	</animation>
+
+
+ <!--========== Palonnier ============================-->
+        <animation>
+		<type>rotate</type>
+		<object-name>GRudder</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-3.2005</x-m>
+			<y-m>0</y-m>
+			<z-m>0.0164554</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+        <animation>
+		<type>rotate</type>
+		<object-name>DRudder</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>-30</factor>
+		<center>
+			<x-m>-3.2005</x-m>
+			<y-m>0</y-m>
+			<z-m>0.0164554</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+ <!--========== Manche ============================-->
+        <animation>
+		<type>rotate</type>
+		<object-name>Manche</object-name>
+                <object-name>Manche-Chaussette</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>-10</factor>
+		<center>
+			<x-m>-2.98237</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.068633</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Manche</object-name>
+                <object-name>Manche-Chaussette</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>-10</factor>
+		<center>
+			<x-m>-2.98237</x-m>
+			<y-m>-0.0</y-m>
+			<z-m>0.068633</z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+    <!--========== Collective============================-->
+        <animation>
+		<type>rotate</type>
+		<object-name>Collective-Cde</object-name>
+		<property>/controls/engines/engine/throttle/</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>-2.42059</x-m>
+			<y-m>-0.0</y-m>
+			<z-m>0.0487864</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+        <!--================TRAIN GAUCHE===================-->
+
+        <animation>
+            <type>rotate</type>
+            <object-name>GTrain-Jambe</object-name>
+            <object-name>GTrain-Frein</object-name>
+            <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>-0.227246</y-m>
+                    <z-m>-0.345553</z-m>
+            </center>
+            <axis>
+                    <x>-1.0</x>
+                    <y>0.0</y>
+                    <z>0.0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>GTrain-Roue</object-name>
+            <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>-0.227246</y-m>
+                    <z-m>-0.345553</z-m>
+            </center>
+            <axis>
+                    <x>-1.0</x>
+                    <y>0.0</y>
+                    <z>0.0</z>
+            </axis>
+
+        </animation>
+
+         <animation>
+            <type>rotate</type>
+            <object-name>GTrain-Amortisseur</object-name>
+            <!--<object-name>GTrain-Amortisseur-Piston</object-name>-->
+            <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>-0.227246</y-m>
+                <z-m>-0.345553</z-m>
+            </center>
+            <axis>
+                  <x>-1</x>
+                  <y>0</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>GTrain-Amortisseur</object-name>
+             <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-1.4</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>1.4</dep>
+                    </entry>
+                    <entry>
+                    <ind>1</ind>
+                    <dep>2.6</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>-1.66031</y-m>
+                <z-m>-0.664266</z-m>
+            </center>
+            <axis>
+                  <x>1</x>
+                  <y>0</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+
+
+
+        <!--================TRAIN DROIT===================-->
+
+        <animation>
+            <type>rotate</type>
+            <object-name>DTrain-Jambe</object-name>
+            <object-name>DTrain-Frein</object-name>
+            <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>0.227246</y-m>
+                    <z-m>-0.345553</z-m>
+            </center>
+            <axis>
+                    <x>1.0</x>
+                    <y>0.0</y>
+                    <z>0.0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>DTrain-Roue</object-name>
+            <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>0.227246</y-m>
+                    <z-m>-0.345553</z-m>
+            </center>
+            <axis>
+                    <x>1.0</x>
+                    <y>0.0</y>
+                    <z>0.0</z>
+            </axis>
+
+        </animation>
+
+         <animation>
+            <type>rotate</type>
+            <object-name>DTrain-Amortisseur</object-name>
+            <!--<object-name>GTrain-Amortisseur-Piston</object-name>-->
+            <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0.227246</y-m>
+                <z-m>-0.345553</z-m>
+            </center>
+            <axis>
+                  <x>1</x>
+                  <y>0</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>DTrain-Amortisseur</object-name>
+             <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-1.4</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>1.4</dep>
+                    </entry>
+                    <entry>
+                    <ind>1</ind>
+                    <dep>2.6</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>1.66031</y-m>
+                <z-m>-0.664266</z-m>
+            </center>
+            <axis>
+                  <x>-1</x>
+                  <y>0</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+
+
+        <!--================TRAIN AVANT===================-->
+
+        <animation>
+            <type>rotate</type>
+            <object-name>AVTrain-Roue</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>12</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>-10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                <x-m>-2.60372</x-m>
+                <y-m>0</y-m>
+                <z-m>-0.627293</z-m>
+            </center>
+            <axis>
+              <x>0</x>
+              <y>1</y>
+              <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>AVTrain-Fourche</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>12</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>-5</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>-10</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                <x-m>-2.60372</x-m>
+                <y-m>0</y-m>
+                <z-m>-0.627293</z-m>
+            </center>
+            <axis>
+              <x>0</x>
+              <y>1</y>
+              <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>translate</type>
+            <object-name>AVTrain-Piston</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+             <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.33</ind>
+                    <dep>0</dep>
+                    </entry>
+                    <entry>
+                    <ind>0.66</ind>
+                    <dep>0.03</dep>
+                    </entry>
+                    <entry>
+                    <ind>1.0</ind>
+                    <dep>0.08</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+
+
+
+
+
+
+
+
+
+
+
+</PropertyList>
